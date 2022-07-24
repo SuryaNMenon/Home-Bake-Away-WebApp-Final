@@ -9,6 +9,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -189,7 +190,9 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to="/products/Cakes">
+            <TopButton style={{backgroundColor: "black", color: "white"}}>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
@@ -239,10 +242,10 @@ const Cart = () => {
             </SummaryItem>
             <StripeCheckout
               name="Home Bake Away"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              image="https://cdn.discordapp.com/attachments/997742200194609183/1000788192540242040/homebakeaway.png"
               billingAddress
               shippingAddress
-              description={`Your total is $${cart.total}`}
+              description={`Your total is Rs.${cart.total}`}
               amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
