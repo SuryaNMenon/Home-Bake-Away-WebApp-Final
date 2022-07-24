@@ -78,14 +78,14 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-        <img src={log} height={100} width={150} />
+        <Link to="/" style={{textDecoration:"none", color:"black"}}><img src={log} height={100} width={150} /></Link>
           {/* <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer> */}
         </Left>
         <Center>
-          <Logo>HomeBakeAway.</Logo>
+          <Link to="/" style={{textDecoration:"none", color:"black"}}><Logo>HomeBakeAway.</Logo></Link>
         </Center>
         <Right>
           <Link to="/register" style={{textDecoration:"none", color:"black"}}>
