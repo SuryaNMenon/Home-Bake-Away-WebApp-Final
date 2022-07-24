@@ -34,19 +34,19 @@ export const sliderItems = [
     {
       id: 1,
       img: "https://zoebakes.com/wp-content/uploads/2019/01/Hot-Chocolate-Cake-ZoeBakes-11-of-15.jpg",
-      title: "DAILY BAKES!",
-      cat:"Red"
+      title: "Daily Bakes",
+      cat:"Cakes"
     },
     {
       id: 2,
       img: "https://i.imgur.com/u1RHlXQ.jpg",
-      title: "CUP CAKES",
-      cat:"Cakes"
+      title: "Savoury Snacks",
+      cat:"Savoury"
     },
     {
       id: 3,
       img: "https://i.imgur.com/ov52KtE.jpg",
-      title: "PLUM CAKES",
+      title: "Plum Cakes",
       cat:"Black"
     },
   ];
