@@ -33,13 +33,13 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://zoebakes.com/wp-content/uploads/2019/01/Hot-Chocolate-Cake-ZoeBakes-11-of-15.jpg",
+      img: "https://i.imgur.com/3AlTl9y.png",
       title: "Daily Bakes",
       cat:"Cakes"
     },
     {
       id: 2,
-      img: "https://i.imgur.com/u1RHlXQ.jpg",
+      img: "https://i.imgur.com/T5qoWcq.png",
       title: "Savoury Snacks",
       cat:"Savoury"
     },

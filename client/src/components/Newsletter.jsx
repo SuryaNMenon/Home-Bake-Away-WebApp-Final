@@ -4,7 +4,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60vh;
-  background:url('https://i.imgur.com/vZARUfK.png');
+  background:url('https://i.imgur.com/SO66Cqz.png');
   background-size:cover;
   display: flex;
   align-items: center;

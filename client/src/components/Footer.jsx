@@ -112,7 +112,7 @@ const Footer = () => {
           <Phone style={{marginRight:"10px"}}/> +91 9633433337
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@HomeBakeAway.com
+          <MailOutline style={{marginRight:"10px"}} /> homebakeaway@gmail.com
         </ContactItem>
       </Right>
     </Container>
