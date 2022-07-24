@@ -132,7 +132,7 @@ const P = styled.div`
             </Link>
           </Icon>
         </Info>
-        
+        <P><h2>{item.title}</h2></P>
       </Container>
     );
   };
