@@ -27,11 +27,12 @@ const Container = styled.div`
   margin: 5px;
   min-width: 280px;
   height: 350px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
+  text-align:center;
 
   &:hover ${Info}{
     opacity: 1;
@@ -49,6 +50,7 @@ const Circle = styled.div`
 const Image = styled.img`
   height: 75%;
   z-index: 2;
+  padding-top:10px;
 `;
 
 const Icon = styled.div`
@@ -67,10 +69,22 @@ const Icon = styled.div`
   }
 `;
 
+const P = styled.div`
+
+  color:black;
+  padding-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  position:absolute;
+`;
+
 const Product = ({ item }) => {
   return (
     <Container>
-      <Circle />
+     {/*<Circle />*/}
       <Image src={item.img} />
       <Info>
         <Icon>
@@ -79,6 +93,7 @@ const Product = ({ item }) => {
           </Link>
         </Icon>
       </Info>
+      <P><h2>{item.title}</h2></P>
       
     </Container>
   );
