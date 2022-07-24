@@ -8,7 +8,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://i.imgur.com/UzGqmq0.png")
+    url("https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80")
       center;
   background-size: cover;
   display: flex;
@@ -19,7 +19,12 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.80);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  border: 1px solid rgba(255, 255, 255, 0.02);
   ${mobile({ width: "75%" })}
 `;
 
@@ -34,10 +39,16 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 20px 10px 0px 0px;
-  padding: 10px;
+flex: 1;
+min-width: 40%;
+margin: 10px 5px;
+padding: 10px;
+background: rgba(255, 255, 255, 0.80);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.7px);
+-webkit-backdrop-filter: blur(5.7px);
+border: 1px solid rgba(255, 255, 255, 0.02);
 `;
 
 const Agreement = styled.span`
@@ -48,9 +59,11 @@ const Agreement = styled.span`
 const Button = styled.button`
   width: 40%;
   border: none;
-  margin-top: 20px;
-  padding: 15px 20px;
+  margin-top: 10px;
+  margin-left:5px;
+  padding: 10px 15px;
   background-color: teal;
+  border-radius:16px;
   color: white;
   cursor: pointer;
 `;

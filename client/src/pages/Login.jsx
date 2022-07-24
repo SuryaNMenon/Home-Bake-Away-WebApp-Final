@@ -41,11 +41,12 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items:center;
 `;
 
 const Input = styled.input`
   flex: 1;
-  min-width: 40%;
+  min-width: 75%;
   margin: 10px 0;
   padding: 10px;
   background: rgba(255, 255, 255, 0.80);
@@ -60,6 +61,7 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 10px 15px;
+  margin:30%;
   background-color: teal;
   color: white;
   cursor: pointer;
@@ -78,6 +80,8 @@ const Button = styled.button`
 
 const Error = styled.span`
   color: red;
+  font-size:10px;
+  padding:5px;
 `;
 
 const Login = () => {
@@ -108,7 +112,7 @@ const Login = () => {
             LOGIN
           </Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link to="/register" style={{textDecoration:"none", color:"black"}}>CREATE A NEW ACCOUNT</Link>
+          <Link to="/register" style={{textDecoration:"none", color:"black",fontSize:"10px"}}>CREATE A NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>
