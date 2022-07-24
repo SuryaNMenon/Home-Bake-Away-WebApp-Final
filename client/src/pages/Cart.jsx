@@ -1,5 +1,5 @@
 import { Add, Remove } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import {clearCart} from "../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -164,6 +165,7 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
@@ -185,6 +187,11 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+    
+  };
   return (
     <Container>
       <Navbar />
@@ -195,7 +202,7 @@ const Cart = () => {
           <Link to="/products/Cakes">
             <TopButton style={{backgroundColor: "black", color: "white"}}>CONTINUE SHOPPING</TopButton>
           </Link>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton type="filled" onClick={() => handleClearCart()}>CLEAR</TopButton>
         </Top>
         <Bottom>
           <Info>
