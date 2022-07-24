@@ -78,6 +78,11 @@ const Button = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  &:hover
+  {
+    background-color : black;
+    color : #${(props) => props.bg};
+  }
 `;
 
 const Slider = () => {
@@ -105,7 +110,7 @@ const Slider = () => {
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
               <Link to="/products/" style={{textDecoration:"none", color:"black"}}>
-                <Button style={{backgroundColor:"black", color: "white"}}>SHOW NOW</Button>
+                <Button bg={item.bg}>SHOW NOW</Button>
               </Link>
             </InfoContainer>
           </Slide>

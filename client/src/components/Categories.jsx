@@ -6,6 +6,7 @@ import CategoryItem from "./CategoryItem";
 const Container = styled.div`
   display: flex;
   padding: 20px;
+  background-color:#f5fbfd;
   justify-content: space-between;
   ${mobile({ padding: "0px", flexDirection:"column" })}
 
