@@ -34,6 +34,11 @@ const Title = styled.h1`
     margin-bottom: 20px;
 `;
 
+const Text = styled.div`
+  opacity:1;
+  transition: all 0.5s ease;
+`;
+
 const Button = styled.button`
     border:none;
     padding: 10px;
@@ -41,6 +46,15 @@ const Button = styled.button`
     color:gray;
     cursor: pointer;
     font-weight: 600;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity:0.6;
+      transform:scale(1.1); 
+    }
+    &:hover ${Text}{
+      opacity:1;
+      color:Black;
+    }
 `;
 
 const CategoryItem = ({ item }) => {
@@ -50,7 +64,7 @@ const CategoryItem = ({ item }) => {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <Button><Text>SHOP NOW</Text></Button>
       </Info>
       </Link>
     </Container>

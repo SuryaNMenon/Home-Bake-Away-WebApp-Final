@@ -1,21 +1,21 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://zoebakes.com/wp-content/uploads/2019/01/Hot-Chocolate-Cake-ZoeBakes-11-of-15.jpg",
+      img: "https://media.discordapp.net/attachments/997742200194609183/1000800148613505086/unknown.png?width=1228&height=1228",
       title: "BAKED WITH LOVE",
       desc: "Hand-baked to perfection with only the finest ingredients to cook up the perfect storm for your sweet tooth.",
       bg: "f5fafd",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://media.discordapp.net/attachments/997742200194609183/1000799874427666504/unknown.png?width=1228&height=1228",
       title: "NOW SERVING FOR ALL OCCASSIONS",
       desc: "From cakes and cupcakes to pizza, we've got you sorted for all your foodie needs!",
       bg: "fcf1ed",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://media.discordapp.net/attachments/997742200194609183/1000801823432646747/unknown.png?width=1228&height=1228",
       title: "PRE-ORDER NOW",
       desc: "",
       bg: "fbf0f4",
@@ -33,7 +33,7 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://i.imgur.com/3AlTl9y.png",
+      img: "https://media.discordapp.net/attachments/997742200194609183/1000797520978518036/unknown.png?width=1228&height=1228",
       title: "Daily Bakes",
       cat:"Cakes"
     },
