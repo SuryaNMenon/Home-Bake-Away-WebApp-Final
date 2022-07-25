@@ -7,7 +7,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">lamaadmin</span>
+          <span className="logo" style={{color:"black"}}>HomeBakeAway.</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
@@ -21,7 +21,7 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
-          <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+          <img src="https://cdn.discordapp.com/attachments/997742200194609183/1000788192540242040/homebakeaway.png" alt="" className="topAvatar" />
         </div>
       </div>
     </div>
