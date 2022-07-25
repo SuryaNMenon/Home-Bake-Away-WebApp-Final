@@ -33,6 +33,7 @@ const Container = styled.div`
   background-color: #f5fbfd;
   position: relative;
   text-align:center;
+  
 
   &:hover ${Info}{
     opacity: 1;

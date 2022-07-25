@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/apiCalls";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -35,7 +36,8 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleClick} style={{ padding: 10, width:100 }}>
-        Login
+        
+        <Link to="/users" style={{textDecoration:"none", color:"black",fontSize:"10px"}}>Login</Link>
       </button>
     </div>
   );
