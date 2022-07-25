@@ -15,6 +15,7 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-scroll-parallax": "^3.2.0",
     "react-stripe-checkout": "^2.6.3",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.1",

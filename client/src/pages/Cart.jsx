@@ -199,7 +199,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Link to="/products/Cakes">
+          <Link to="/products/">
             <TopButton style={{backgroundColor: "black", color: "white"}}>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopButton type="filled" onClick={() => handleClearCart()}>CLEAR</TopButton>
