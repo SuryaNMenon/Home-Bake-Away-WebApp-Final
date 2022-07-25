@@ -242,14 +242,15 @@ const Cart = () => {
               <SummaryItemPrice>RS. {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemText>DeliveryCost + Tax</SummaryItemText>
               <SummaryItemPrice>RS. 50</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>RS. {cart.total + 50}</SummaryItemPrice>
             </SummaryItem>
-            <StripeCheckout
+            <Button>CHECKOUT NOW</Button>
+            {/* <StripeCheckout
               name="Home Bake Away"
               image="https://cdn.discordapp.com/attachments/997742200194609183/1000788192540242040/homebakeaway.png"
               billingAddress
@@ -259,8 +260,8 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>CHECKOUT NOW</Button>
-            </StripeCheckout>
+              
+            </StripeCheckout> */}
           </Summary>
         </Bottom>
       </Wrapper>

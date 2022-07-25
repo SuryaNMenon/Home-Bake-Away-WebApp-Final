@@ -67,7 +67,7 @@ const Homedisplay = ({ cat, filters, sort }) => {
       {cat
         ? filteredProducts.map((item) => <HDprod item={item} key={item.id} />)
         : products
-            .slice(0, 99)
+            .slice(0, 6)
             .map((item) => <HDprod item={item} key={item.id} />)}
     </Container>
   );
