@@ -27,7 +27,7 @@ export default function NewUser() {
         </div>
         <div className="newUserItem">
           <label>Address</label>
-          <input type="text" placeholder="New York | USA" />
+          <input type="text" placeholder="Trivandrum" />
         </div>
         <div className="newUserItem">
           <label>Gender</label>

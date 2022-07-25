@@ -22,7 +22,7 @@ export default function User() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://cdn.discordapp.com/attachments/997742200194609183/1000788192540242040/homebakeaway.png"
               alt=""
               className="userShowImg"
             />
@@ -96,7 +96,7 @@ export default function User() {
                 <label>Address</label>
                 <input
                   type="text"
-                  placeholder="New York | USA"
+                  placeholder="Trivandrum"
                   className="userUpdateInput"
                 />
               </div>
