@@ -88,6 +88,9 @@ const Navbar = () => {
           <Link to="/" style={{textDecoration:"none", color:"black"}}><Logo>HomeBakeAway.</Logo></Link>
         </Center>
         <Right>
+        <Link to="/customize" style={{textDecoration:"none", color:"black"}}>
+            <MenuItem>CUSTOMIZE</MenuItem>
+          </Link>
           <Link to="/register" style={{textDecoration:"none", color:"black"}}>
             <MenuItem>REGISTER</MenuItem>
           </Link>
