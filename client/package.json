@@ -2,6 +2,7 @@
   "name": "new",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@google-pay/button-react": "^3.0.0",
     "@material-ui/core": "^4.12.3",

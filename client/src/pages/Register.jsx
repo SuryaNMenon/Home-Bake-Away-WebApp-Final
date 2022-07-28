@@ -89,7 +89,7 @@ const Register = () => {
     setError(false);
     console.log(username,email,password)
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post("/api/auth/register", {
         username,
         email,
         password,
@@ -112,7 +112,7 @@ const Register = () => {
           <Input placeholder="last name"  />
           <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
           <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
-          <Input placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+          <Input type = "password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
           <Button type="submit">CREATE</Button>
         </Form>
       <Button>
