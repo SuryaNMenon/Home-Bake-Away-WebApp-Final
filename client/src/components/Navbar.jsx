@@ -5,6 +5,7 @@ import log from "../img/homebakeaway.png";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -72,6 +73,7 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 const Navbar = () => {
+  const history = useHistory();
   const quantity = useSelector(state=>state.cart.quantity)
   const user = useSelector((state) => state.user.currentUser)
   return (
@@ -95,7 +97,11 @@ const Navbar = () => {
             <MenuItem>REGISTER</MenuItem>
           </Link>
           <Link to={user ? "/" : "/login"} style={{textDecoration:"none", color:"black"}}>
-            <MenuItem>{user ? "SIGN OUT" : "SIGN IN"}</MenuItem>
+            <MenuItem onClick={()=> {if(user){
+                  localStorage.clear();
+                  history.push('/register');
+                  window.location.reload(true);
+            } } }>{user ? "SIGN OUT" : "SIGN IN"}</MenuItem>
           </Link>
           <Link to="/cart">
           <MenuItem>

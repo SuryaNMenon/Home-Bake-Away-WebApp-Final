@@ -1,5 +1,9 @@
+import axios from "axios";
+import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useDispatch, useSelector } from "react-redux";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -68,20 +72,55 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color: red;
+  font-size:10px;
+  padding:5px;
+`;
+
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(false);
+    console.log(username,email,password)
+    try {
+      const res = await axios.post("/api/auth/register", {
+        username,
+        email,
+        password,
+      });
+      
+      res.data && window.location.replace("/login");
+    } 
+    catch (err) {
+      setError(true);
+    }
+  };
+
+
   return (
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Button>CREATE</Button>
+        <Form onSubmit={handleSubmit}>
+          <Input placeholder="First name" />
+          <Input placeholder="last name"  />
+          <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+          <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+          <Input type = "password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+          <Button type="submit">CREATE</Button>
         </Form>
+      <Button>
+      <Link className="link" to="/login">
+          Login
+        </Link>
+      </Button>
+     {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
       </Wrapper>
     </Container>
   );

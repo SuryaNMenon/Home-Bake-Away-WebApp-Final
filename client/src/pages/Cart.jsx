@@ -1,4 +1,4 @@
-import { Add, Remove } from "@material-ui/icons";
+import { Add, LocalTaxiTwoTone, Remove } from "@material-ui/icons";
 import { useSelector,useDispatch } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -9,7 +9,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import {clearCart} from "../redux/cartRedux";
 import GooglePayButton from '@google-pay/button-react';
 import React from 'react';
@@ -192,7 +192,6 @@ const Cart = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
-    
   };
   return (
     <Container>
@@ -252,8 +251,8 @@ const Cart = () => {
               <SummaryItemPrice>RS. {cart.total + 50}</SummaryItemPrice>
             </SummaryItem>
             
-
-            <GooglePayButton
+              
+            <GooglePayButton style={{marginLeft:"25%"}}
             //change here "PRODUCTION"
             environment="TEST"
             paymentRequest={{
