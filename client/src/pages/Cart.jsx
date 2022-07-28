@@ -251,8 +251,8 @@ const Cart = () => {
               <SummaryItemPrice>RS. {cart.total + 50}</SummaryItemPrice>
             </SummaryItem>
             
-
-            <GooglePayButton
+              
+            <GooglePayButton style={{marginLeft:"25%"}}
             //change here "PRODUCTION"
             environment="TEST"
             paymentRequest={{
