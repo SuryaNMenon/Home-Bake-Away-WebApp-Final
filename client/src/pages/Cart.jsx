@@ -11,6 +11,8 @@ import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import {clearCart} from "../redux/cartRedux";
+import GooglePayButton from '@google-pay/button-react';
+import React from 'react';
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -249,7 +251,67 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>RS. {cart.total + 50}</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            
+
+            <GooglePayButton
+            //change here "PRODUCTION"
+            environment="TEST"
+            paymentRequest={{
+              apiVersion: 2,
+              apiVersionMinor: 0,
+              allowedPaymentMethods: [
+              {
+                type: 'CARD',
+                parameters: {
+                  allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                 allowedCardNetworks: ['MASTERCARD', 'VISA'],
+               },
+               tokenizationSpecification: {
+                 type: 'PAYMENT_GATEWAY',
+                  parameters: {
+                    //change here
+                    gateway: 'example',
+                   gatewayMerchantId: 'exampleGatewayMerchantId',
+                  },
+                },
+             },
+            ],
+            //change here  merchantId
+           merchantInfo: {
+              merchantId: '12345678901234567890',
+              merchantName: 'Home Bake Away',
+           },
+           transactionInfo: {
+             totalPriceStatus: 'FINAL',
+              totalPriceLabel: 'Total',
+              //chnage here
+              totalPrice: '1',
+              currencyCode: 'INR',
+             countryCode: 'IN',
+            },
+            shippingAddressRequired: true,
+            callbackIntents: ['SHIPPING_ADDRESS', 'PAYMENT_AUTHORIZATION'],
+          }}
+          onLoadPaymentData={paymentRequest => {
+           console.log('Success', paymentRequest);
+          }}
+          onPaymentAuthorized={paymentData => {
+              console.log('Payment Authorised Success', paymentData)
+              return { transactionState: 'SUCCESS'}
+            }
+          }
+          onPaymentDataChanged={paymentData => {
+              console.log('On Payment Data Changed', paymentData)
+              return { }
+           }
+          }
+          existingPaymentMethodRequired='false'
+          buttonColor='default'
+          buttonSizeMode="fill"
+          buttonType='Buy'
+      />
+
+
             {/* <StripeCheckout
               name="Home Bake Away"
               image="https://cdn.discordapp.com/attachments/997742200194609183/1000788192540242040/homebakeaway.png"
@@ -260,8 +322,8 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              
             </StripeCheckout> */}
+            
           </Summary>
         </Bottom>
       </Wrapper>
