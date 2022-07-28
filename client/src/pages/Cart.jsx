@@ -134,10 +134,11 @@ const Hr = styled.hr`
 
 const Summary = styled.div`
   flex: 1;
+  text-align:center;
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  // height: 50vh;
 `;
 
 const SummaryTitle = styled.h1`
@@ -252,7 +253,7 @@ const Cart = () => {
             </SummaryItem>
             
               
-            <GooglePayButton style={{marginLeft:"25%"}}
+            <GooglePayButton
             //change here "PRODUCTION"
             environment="TEST"
             paymentRequest={{
@@ -305,7 +306,7 @@ const Cart = () => {
            }
           }
           existingPaymentMethodRequired='false'
-          buttonColor='default'
+          buttonColor='white'
           buttonSizeMode="fill"
           buttonType='Buy'
       />

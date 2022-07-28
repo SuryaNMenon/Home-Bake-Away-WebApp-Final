@@ -5,6 +5,8 @@ import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import {Link, NavLink, useNavigate} from "react-router-dom";
 
+import React, { useEffect } from 'react';
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -21,6 +23,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  text-align:center;
   width: 40%;
   padding: 20px;
   background: rgba(255, 255, 255, 0.80);
@@ -39,6 +42,7 @@ const Title = styled.h1`
 
 const Form = styled.form`
   display: flex;
+  justify-content:center;
   flex-wrap: wrap;
 `;
 
@@ -66,10 +70,13 @@ const Button = styled.button`
   margin-top: 10px;
   margin-left:5px;
   padding: 10px 15px;
-  background-color: teal;
+  background-color: black;
   border-radius:16px;
   color: white;
   cursor: pointer;
+  transition-duration:0.5s;
+  transition-timing-function: linear;
+
 `;
 
 const Error = styled.span`
@@ -83,6 +90,30 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+
+  const [cPassword, setCPassword] = useState('');
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [cPasswordClass, setCPasswordClass] = useState('form-control');
+  const [isCPasswordDirty, setIsCPasswordDirty] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  useEffect(() => {
+    if (isCPasswordDirty) {
+        if (password === cPassword) {
+            setShowErrorMessage(false);
+            setCPasswordClass('form-control is-valid')
+        } else {
+            setShowErrorMessage(true)
+            setCPasswordClass('form-control is-invalid')
+        }
+    }
+}, [cPassword])
+
+const handleCPassword = (e) => {
+    setCPassword(e.target.value);
+    setIsCPasswordDirty(true);
+}
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,24 +134,36 @@ const Register = () => {
   };
 
 
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form onSubmit={handleSubmit}>
-          <Input placeholder="First name" />
+          <Input placeholder="first name" />
           <Input placeholder="last name"  />
           <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
           <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
           <Input type = "password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
-          <Button type="submit">CREATE</Button>
+          <Input type ="password" placeholder="confirm password" onChange={handleCPassword}/>
+          <Button type="submit" >SIGNUP</Button>
         </Form>
-      <Button>
-      <Link className="link" to="/login">
-          Login
-        </Link>
+
+        <Link className="link" to="/login" style={{textDecoration:"none"}}>
+      <Button style={{backgroundColor: isHovering ?"rgba(237, 237, 237,0.8)":"rgba(255,255,255,0.9)" ,color:"black"}}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        Login with an existing account
       </Button>
-     {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
+      </Link>
+      {showErrorMessage && isCPasswordDirty ? <div style={{color:"red", marginTop:"10px"}}> Passwords did not match </div> : ''}
+
+     {error && <div style={{color:"red", marginTop:"10px"}}>Something went wrong!</div>}
       </Wrapper>
     </Container>
   );
