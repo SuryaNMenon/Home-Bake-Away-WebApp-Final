@@ -306,7 +306,7 @@ const Cart = () => {
            }
           }
           existingPaymentMethodRequired='false'
-          buttonColor='white'
+          buttonColor='default'
           buttonSizeMode="fill"
           buttonType='Buy'
       />

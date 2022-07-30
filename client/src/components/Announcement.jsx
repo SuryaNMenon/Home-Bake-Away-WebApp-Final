@@ -33,7 +33,7 @@ const Announcement = () => {
  
   return (<Container>
             <Marcontainer>
-            <marquee>{user ? <H4>Hi, {user.username}</H4>:"Now accepting online orders!"}</marquee>
+            <marquee>{user ? <H4>Hi {user.username}! We are now accepting online orders.</H4>:"Now accepting online orders!"}</marquee>
             </Marcontainer>
             {/* <div style={{backgroundColor:"white",color:"black"}}></div> */}
           </Container>);
