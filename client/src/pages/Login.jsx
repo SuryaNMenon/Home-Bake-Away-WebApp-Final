@@ -62,7 +62,7 @@ const Button = styled.button`
   border: none;
   padding: 10px 15px;
   margin:30%;
-  background-color: teal;
+  background-color: black;
   color: white;
   cursor: pointer;
   margin-bottom: 8px;

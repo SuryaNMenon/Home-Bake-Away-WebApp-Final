@@ -99,7 +99,7 @@ const Navbar = () => {
           <Link to={user ? "/" : "/login"} style={{textDecoration:"none", color:"black"}}>
             <MenuItem onClick={()=> {if(user){
                   localStorage.clear();
-                  history.push('/register');
+                  history.push('/');
                   window.location.reload(true);
             } } }>{user ? "SIGN OUT" : "SIGN IN"}</MenuItem>
           </Link>
